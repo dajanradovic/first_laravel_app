@@ -47,7 +47,7 @@ Click on edit or delete your post</i></p>
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{$post->title}}</h5>
+        <h5 class="card-title"><u>{{$post->title}}</u></h5>
         <p class="card-text">{{$post->body}}</p>
         <span class="badge badge-pill 
                         <?php if ($post->genre == 'punk') { echo ('badge-success'); }

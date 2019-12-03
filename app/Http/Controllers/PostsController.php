@@ -59,7 +59,7 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required',
             'genre' => 'required',
-            'image' => 'required | file | image |max: 3000'
+            'image' => 'required | file | image |max: 1999'
         ]);
         $post= new Post();
         $post->title = request('title');

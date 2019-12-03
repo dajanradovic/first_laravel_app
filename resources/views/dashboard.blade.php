@@ -40,7 +40,7 @@ Click on any post if you want to read the post in its entirety, check the commen
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{$post->title}}</h5>
+        <h5 class="card-title"><u>{{$post->title}}</u></h5>
         <p class="card-text overflow-hidden" style="height:150px;">{{$post->body}}</p>
         <span class="badge badge-pill 
                         <?php if ($post->genre == 'punk') { echo ('badge-success'); }

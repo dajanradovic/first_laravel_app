@@ -24,6 +24,13 @@ textarea{
 
     width:100%;
 }
+
+.noposts{
+    font-family: 'Roboto Mono', monospace !important;
+    color:white;
+    margin: 0 auto;
+    font-size:20px;
+}
 </style>
 
 
@@ -37,6 +44,14 @@ textarea{
  <div class="container mt-5">
 <div class="row" >
 
+@if ($posts->count() ==null)
+
+<p class="noposts">There are currently no posts</br>
+    Click <a href="{{url('/posts/create')}}" class="btn btn-primary btn-sm">here</a> to start posting
+</p>
+
+
+@else
 
 @foreach ($posts as $post)
        
@@ -50,7 +65,7 @@ textarea{
              </div>
              <div class="col-md-8">
                <div class="card-body">
-                  <h5 class="card-title">{{$post->title}}</h5>
+                  <h5 class="card-title"><u>{{$post->title}}</u></h5>
                           <p class="card-text">{{$post->body}}</p>
                                   <span class="badge badge-pill 
                                          <?php if ($post->genre == 'punk') { echo ('badge-success'); }
@@ -92,7 +107,7 @@ textarea{
 
 @endforeach
 
-
+@endif
 
 
 </div>
