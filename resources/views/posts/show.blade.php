@@ -27,7 +27,7 @@ Single post site
 <div class="container mt-5">
 <div class="row">
 <div class="col-md-4">
-<h4  style="color:white;"><i><small>Hi,</small> {{$user->name}}</i></h4>
+<h4  style="color:white;"><i><small>Hi,</small> {{auth()->user()->name}}</i></h4>
 <br />
 <p class="welcometext"><i>Welcome to your dashboard.
 Click on edit or delete your post</i></p>

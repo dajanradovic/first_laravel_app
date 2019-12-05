@@ -19,13 +19,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-          $user_id = auth()->user()->id;
-            $user=User::find($user_id);
-           // $posts=$user->posts->paginate(10);
-            $posts = Post::where('user_id', $user_id)->paginate(10); 
-          
-
-        return view ('dashboard', compact('posts', 'user'));
+        
+           $posts = auth()->user()->posts()->get();
+           
+        return view ('dashboard', compact('posts'));
     }
 
     /**
@@ -86,14 +83,13 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $id)
     {   
-        $user_id = auth()->user()->id;
-        $user=User::find($user_id);
-        $post=Post::find($id);
+     
+         $post =$id;
         $comments=Comment::all();
 
-        return view ('posts.show', compact('post','user', 'comments'));
+        return view ('posts.show', compact('post', 'comments'));
     }
 
     /**
@@ -102,10 +98,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $id)
     {
-        $post=Post::find($id);
-        
+        $post=$id;        
         
         return view ('posts.edit')->with ('post', $post);
     }

@@ -23,7 +23,7 @@ Dashboard
 <div class="container mt-5">
 <div class="row">
 <div class="col-md-4">
-<h4  style="color:white;"><i><small>Hi,</small> {{$user->name}}</i></h4>
+<h4  style="color:white;"><i><small>Hi,</small> {{auth()->user()->name}}</i></h4>
 <br />
 <p class="welcometext"><i>Welcome to your dashboard.
 Click on any post if you want to read the post in its entirety, check the comments on it or edit it or delete the post</i></p>
@@ -58,9 +58,7 @@ Click on any post if you want to read the post in its entirety, check the commen
 </div>
 </a>
 @endforeach
-<div>
-{{ $posts->links() }}
-</div>
+
 </div>
 
 </div>
