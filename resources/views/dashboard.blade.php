@@ -30,10 +30,10 @@ Click on any post if you want to read the post in its entirety, check the commen
 
 <a type="button" href="{{url('/posts/create')}}" class="btn btn-warning">Add a new post</a>
 </div>
-<div class="flex-container">
+<div class="flex-container mt-2 pl-2 pr-2">
 @foreach ($posts as $post)
 <a href="/posts/{{$post->id}}">
-<div  title="Click to see more" class="mx-auto card mb-3" style="max-width: 540px;">
+<div  title="Click to see more" class="mx-auto card mb-3 " style="max-width: 540px;">
   <div class="row no-gutters">
     <div class="col-md-4">
       <img src="/storage/{{$post->image}}" class="card-img" alt="...">
